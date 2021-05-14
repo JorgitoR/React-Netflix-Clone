@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios  from './axios'
 import request from './request'
 
@@ -16,6 +16,14 @@ function Banner(){
 				]
 			);
 
+			setMovie(
+				request.data.results[
+					Math.floor(Math.random() * request.data.results.length - 1)
+				]
+			);
+
+			return request
+
 		}
 
 		fetchData()
@@ -23,10 +31,14 @@ function Banner(){
 		//Math.floor(Math.random() * request.data.results.length - 1)
 	}, []);
 
+	console.log(movie)
 
 	return (
 
-		<header>
+		<header className="banner">
+			<div className="banner_contents">
+			
+			</div>
 			{/*Background Image*/}
 			{/*titulo*/}
 			{/* div > 2 butons*/}
