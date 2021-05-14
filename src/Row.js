@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function Row({title}){
 
-	const [moviews, setMovies] = useState()
+	const [moviews, setMovies] = useState([]);
 
 	return (
 
