@@ -3,7 +3,7 @@ import './App.css';
 
 import Row from './Row';
 import request from './request';
-import Banner from '/.Banner';
+import Banner from './Banner';
 
 function App() {
   return (
