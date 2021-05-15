@@ -14,3 +14,10 @@
 	transition-timing-function:ease-in;
 	transition: all 0.5s; 
 }
+
+/*Adds a black color on navbar*/
+.nav__black{
+	background-color:#111; 
+}
+
+/*Styling and positioning navbar logo*/
