@@ -29,3 +29,12 @@
 	width: 80px;
 	object-fit: contain;
 }
+
+
+/*Styling and positioning navbar avatar*/
+.nav__avatar{
+	position: fixed;
+	right: 20px;
+	width: 30px;
+	object-fit: contain;
+}
