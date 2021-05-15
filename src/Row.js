@@ -30,11 +30,11 @@ function Row({title, fetchUrl, isLargeRow}){
 
 	const opts = {
 
-		height:"390";
-		width: "100%";
+		height:"390",
+		width: "100%",
 		playerVars: {
 			//https://developers.google.com/youtube/player_parameters
-			autoplay; 1
+			autoplay: 1,
 		},
 
 	};
@@ -55,8 +55,8 @@ function Row({title, fetchUrl, isLargeRow}){
         		})
         		.catch((error) => console.log(error));
     }
-		}
-	}
+	};
+	
 
 
 	return (
@@ -71,11 +71,15 @@ function Row({title, fetchUrl, isLargeRow}){
 				<img 
 					key={movie.id}
 					className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+					onClick ={()=> handleClick(movie)}
 					src={`${base_url}${ isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
 					alt={movie.name}/>
 			))}
 
 			</div>
+
+      	{/* Embedding youtube movie trailers to show */}
+      	{trailerURL && <YouTube videoId={trailerURL} opts={opts} />}
 		</div>
 	)
 
