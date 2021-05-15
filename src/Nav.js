@@ -23,6 +23,20 @@ function Nav(){
 
 	return (
 
+		//always use nav css, except when scrolling 100px down we want the black__navbar class
+		<div className={`nav ${show && "nav__black"}`}>
+
+			<img 
+				className="nav__logo" 
+				src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
+				alt="" />
+
+			<img
+        		className="nav__avatar"
+        		src="http://pngimg.com/uploads/netflix/netflix_PNG8.png"
+        		alt="" />
+		
+		</div>	
 
 	)
 
