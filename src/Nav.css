@@ -1,0 +1,16 @@
+/*Styling and positioning navbar container*/
+.nav{
+	position: fixed;
+	top: 0;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding: 20px;
+	height: 30px;
+	/*Navbar always stays on top of the page*/
+	z-index: 1;
+
+	/*Animation*/
+	transition-timing-function:ease-in;
+	transition: all 0.5s; 
+}
