@@ -21,3 +21,11 @@
 }
 
 /*Styling and positioning navbar logo*/
+
+.nav__logo{
+	position: fixed;
+	left: 20px;
+	margin-top: -10px;
+	width: 80px;
+	object-fit: contain;
+}
