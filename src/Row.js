@@ -3,6 +3,7 @@ import axios from './axios';
 import "./Row.css";
 
 import YouTube from "react-youtube"
+import movieTrailer from "movie-trailer";
 
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
@@ -34,9 +35,29 @@ function Row({title, fetchUrl, isLargeRow}){
 		playerVars: {
 			//https://developers.google.com/youtube/player_parameters
 			autoplay; 1
-		}
+		},
 
+	};
+
+	//when user clicks on the movie picture
+	const handleClick = (movie) => {
+		//if the trailer is found clear the url
+		if (trailerURL){
+			setTrailerURL("");
+		}else{
+			// search for movie trailer full url
+			movieTrailer(movie?.name || "")
+				.then((url) => {
+          			// https://www.youtube.com/watch?v=aSØDÆømlsdæ
+          		const urlParams = new URLSearchParams(new URL(url).search); // urlParams gives us everthing after the ?
+          		setTrailerURL(urlParams.get("v")); //urlParams gives us everything after v=
+         		 // Displays error message if unable to find url
+        		})
+        		.catch((error) => console.log(error));
+    }
+		}
 	}
+
 
 	return (
 
