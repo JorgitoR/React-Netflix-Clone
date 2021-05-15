@@ -2,12 +2,16 @@ import React, {useState, useEffect} from 'react'
 import axios from './axios';
 import "./Row.css";
 
+import YouTube from "react-youtube"
+
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
 function Row({title, fetchUrl, isLargeRow}){
 
 	const [movies, setMovies] = useState([]);
+
+	const [trailerURL, setTrailerURL] = useState("");
 
 	useEffect(()=> {
 
@@ -22,6 +26,17 @@ function Row({title, fetchUrl, isLargeRow}){
 	}, [fetchUrl]);
 
 	console.table(movies)
+
+	const opts = {
+
+		height:"390";
+		width: "100%";
+		playerVars: {
+			//https://developers.google.com/youtube/player_parameters
+			autoplay; 1
+		}
+
+	}
 
 	return (
 

@@ -4,6 +4,10 @@
   margin:0;
 }
 /* Styling app component */
+
+body{
+	background: #000;
+}
 .app {
   background-color: #111;
 }
