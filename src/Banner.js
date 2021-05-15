@@ -20,12 +20,14 @@ function Banner(){
 
 		}
 
-		fetchData()
-
-	
+		fetchData()	
 	}, []);
 
 	console.log(movie)
+
+	function truncate(str, n){
+		return str?.length > n ? str.substr(0, n-1) + "..." : str;
+	}
 
 	return (
 
@@ -40,7 +42,9 @@ function Banner(){
 		>
 
 			<div className="banner_contents">
-			
+				<h1 className='banner_title'> 
+					{{movie?.title || movie?.name || movie?.original_name}}
+				</h1>
 			</div>
 			{/*Background Image*/}
 			{/*titulo*/}
